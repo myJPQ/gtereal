@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/e_home"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/e_city"
+                android:layout_width="75dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:background="#000000"
+                android:text="城市"/>
+            <EditText
+                android:id="@+id/e_search"
+                android:layout_width="210dp"
+                android:layout_height="40dp"
+                android:hint="搜索商家、分类、地点"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                />
+            <Button
+                android:id="@+id/e_enter"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:text="筛选" />
+        </LinearLayout>
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <com.baidu.mapapi.map.MapView
+                android:id="@+id/bmapView"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:clickable="true" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/lbs"
+                android:src="@drawable/lbs"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_gravity="left|bottom" />
+        </FrameLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
