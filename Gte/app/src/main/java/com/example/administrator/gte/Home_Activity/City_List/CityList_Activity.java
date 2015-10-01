@@ -3,6 +3,7 @@ package com.example.administrator.gte.Home_Activity.City_List;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -22,6 +23,8 @@ import com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener;
 import com.baidu.mapapi.search.geocode.ReverseGeoCodeResult;
 import com.example.administrator.gte.Home_Activity.HomeActivity;
 import com.example.administrator.gte.R;
+import com.example.administrator.gte.newview.IndexableListView;
+
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -34,9 +37,6 @@ import java.util.regex.Pattern;
  */
 public class CityList_Activity extends Activity{
     private List<City> cityList=new ArrayList<City>();
-    GeoCodeResult result1;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -46,8 +46,9 @@ public class CityList_Activity extends Activity{
         initCities();
         CityListAdapter adapter=new CityListAdapter(CityList_Activity.this,
                 R.layout.city_item,cityList);
-        ListView listView=(ListView)findViewById((R.id.city_list));
+        final IndexableListView listView=(IndexableListView)findViewById((R.id.city_list));
         listView.setAdapter(adapter);
+        listView.setFastScrollEnabled(true);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -58,8 +59,10 @@ public class CityList_Activity extends Activity{
                 Matcher m = p.matcher(text);
 
                 if(id==0){
+
                     return;
                 }else if(m.matches()){
+
                     return;
                 }else {
                     Intent intent=new Intent();

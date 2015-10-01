@@ -259,16 +259,6 @@ public class HomeActivity extends Activity implements OnGetGeoCoderResultListene
     }
 
 
-    public void onGetPoiDetailResult(PoiDetailResult result) {
-        //获取Place详情页检索结果
-        if (result.error != SearchResult.ERRORNO.NO_ERROR) {
-            Toast.makeText(HomeActivity.this, "抱歉，未找到结果", Toast.LENGTH_SHORT)
-                    .show();
-        } else {
-            Toast.makeText(HomeActivity.this, result.getName() + ": " + result.getAddress(), Toast.LENGTH_SHORT)
-                    .show();
-        }
-    }
 
     public void initmPopupWindowView() {
 
