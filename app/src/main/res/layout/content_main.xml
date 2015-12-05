@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:paddingBottom="0dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main" tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#9932CC"
+        android:clickable="false"/>
+    <TextView
+        android:text="今天去哪吃？"
+        android:textColor="#faf8f8"
+        android:background="#9932CC"
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:clickable="false"/>
+        <Button
+            android:gravity="left|center"
+            android:layout_marginTop="30dp"
+            android:id="@+id/Show_Map"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:text="Hello World"
+            android:textAllCaps="false"
+            android:background="#f7f4f4" />
+        <Button
+            android:gravity="left|center"
+            android:layout_marginTop="20dp"
+            android:id="@+id/My_Plan"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:text="Hello World"
+            android:textAllCaps="false"
+            android:background="#f8f1f1"/>
+        <Button
+            android:gravity="left|center"
+            android:layout_marginTop="20dp"
+            android:id="@+id/My_Collection"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:text="Hello World"
+            android:textAllCaps="false"
+            android:background="#f8f1f1"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

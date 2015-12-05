@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.j.gte.SlidingMenu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal">
+
+       <ListView
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"></ListView>
+
+        <include layout="@layout/activity_main" />
+
+
+    </LinearLayout>
+</com.example.j.gte.SlidingMenu>
