@@ -1,4 +1,4 @@
-package com.example.j.gte;
+package com.example.j.gte.OtherClass;
 
 import android.app.Activity;
 import android.content.Context;

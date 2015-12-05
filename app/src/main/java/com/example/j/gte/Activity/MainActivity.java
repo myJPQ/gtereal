@@ -1,4 +1,4 @@
-package com.example.j.gte;
+package com.example.j.gte.Activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -16,6 +16,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+
+import com.example.j.gte.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
