@@ -102,8 +102,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 if (mPopupWindow != null && mPopupWindow.isShowing()) {
                     mPopupWindow.dismiss();
+                    return;
                 } else {
-                    getPopupWindowInstance();
+                    initPopuptWindow();
                     mPopupWindow.showAtLocation(MainActivity.this.findViewById(R.id.bottom_close),
                             Gravity.BOTTOM, 0, 0);
                 }
@@ -111,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             break;
 
             case R.id.bottom_open: {
-                if(mPopupWindow!=null&&mPopupWindow.isShowing()){
+                if (mPopupWindow != null && mPopupWindow.isShowing()) {
                     mPopupWindow.dismiss();
                 }
                 /*
@@ -177,15 +178,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /*
      * 获取PopupWindow实例
 	 */
-    private void getPopupWindowInstance() {
-        if (null != mPopupWindow) {
-            mPopupWindow.dismiss();
-            return;
-        } else {
-            initPopuptWindow();
-        }
 
-    }
 
     private void initPopuptWindow() {
         LayoutInflater layoutInflater = LayoutInflater.from(this);
@@ -197,16 +190,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // 参数2：width 指定PopupWindow的width
         // 参数3：height 指定PopupWindow的height
 
+
         mPopupWindow = new PopupWindow(popupWindow, 720, 150);
+        mPopupWindow.setAnimationStyle(R.style.mypopwindow_anim_style);
         popupWindow.setBackgroundDrawable(getResources().getDrawable(
                 R.drawable.bottom_bar_open));
-        mPopupWindow.setAnimationStyle(R.style.mypopwindow_anim_style);
+
+        mPopupWindow.setFocusable(false);
 
 
         // 获取屏幕和PopupWindow的width和height
-        Button Bottom_Sign=(Button)popupWindow.findViewById(R.id.bottom_open);
+        Button Bottom_Sign = (Button) popupWindow.findViewById(R.id.bottom_open);
         Bottom_Sign.setOnClickListener(this);
 
+    }
+
+    //mpopupwindow打开时触摸屏幕别处可使其消失
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+// TODO Auto-generated method stub
+        if (mPopupWindow != null && mPopupWindow.isShowing()) {
+            mPopupWindow.dismiss();
+            mPopupWindow = null;
+        }
+        return super.onTouchEvent(event);
+    }
+
+    @Override
+    public void onBackPressed() {
+        // do something what you want
+        if (mPopupWindow != null && mPopupWindow.isShowing()) {
+            mPopupWindow.dismiss();
+            mPopupWindow = null;
+            return;
+        } else {
+            super.onBackPressed();
+        }
     }
 
 }
