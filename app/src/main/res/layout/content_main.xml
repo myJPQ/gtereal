@@ -1,64 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="0dp"
-    android:paddingRight="0dp"
-    android:paddingTop="0dp"
-    android:paddingBottom="0dp"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_main" tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main"
+    >
+
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical">
-    <TextView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#9932CC"
-        android:clickable="false"/>
-    <TextView
-        android:text="今天去哪吃？"
-        android:textColor="#faf8f8"
-        android:background="#9932CC"
-        android:layout_width="fill_parent"
-        android:layout_height="150dp"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:clickable="false"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#FFC107"
+            android:clickable="false" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:background="#FFC107"
+            android:clickable="false"
+            android:gravity="center"
+            android:text="今天去哪吃？"
+            android:textColor="#faf8f8"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
         <Button
-            android:gravity="left|center"
-            android:layout_marginTop="30dp"
             android:id="@+id/Show_Map"
             android:layout_width="fill_parent"
-            android:layout_height="80dp"
-            android:drawableLeft="@mipmap/ic_launcher"
-            android:text="Hello World"
-            android:textAllCaps="false"
-            android:background="#f7f4f4" />
-        <Button
+            android:layout_height="48dp"
+            android:layout_marginTop="30dp"
+            android:background="#f7f4f4"
+            android:drawableLeft="@drawable/surroundings"
             android:gravity="left|center"
-            android:layout_marginTop="20dp"
+            android:text="Hello World"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/My_Plan"
             android:layout_width="fill_parent"
-            android:layout_height="80dp"
-            android:drawableLeft="@mipmap/ic_launcher"
-            android:text="Hello World"
-            android:textAllCaps="false"
-            android:background="#f8f1f1"/>
-        <Button
+            android:layout_height="48dp"
+            android:layout_marginTop="30dp"
+            android:background="#f8f1f1"
+            android:drawableLeft="@drawable/plan"
             android:gravity="left|center"
-            android:layout_marginTop="20dp"
+            android:text="Hello World"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/My_Collection"
             android:layout_width="fill_parent"
-            android:layout_height="80dp"
-            android:drawableLeft="@mipmap/ic_launcher"
+            android:layout_height="48dp"
+            android:layout_marginTop="30dp"
+            android:background="#f8f1f1"
+            android:drawableLeft="@drawable/surroundings"
+            android:gravity="left|center"
             android:text="Hello World"
-            android:textAllCaps="false"
-            android:background="#f8f1f1"/>
+            android:textAllCaps="false" />
 
 
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/bottom_close"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@drawable/bottom_bar_close"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
